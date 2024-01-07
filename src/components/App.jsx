@@ -7,7 +7,7 @@ import {
   IsDublicate,
   myFilter,
 } from './index';
-import css from './App.module.css'
+import css from './App.module.css';
 
 export class App extends Component {
   state = {
@@ -50,7 +50,11 @@ export class App extends Component {
         <h1>Phonebook</h1>
         <ContactForm onSubmit={addContact} />
         <h2>Contacts</h2>
-        <Filter title={'Find contacts by name'} changeFilter={changeFilter} />
+        <Filter
+          title={'Find contacts by name'}
+          filter={this.state.filter}
+          changeFilter={changeFilter}
+        />
         <ContactList contacts={contacts()} deleteContact={deleteContact} />
       </div>
     );
